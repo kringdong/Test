@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Forms</title>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>Personal Details</legend>
+				<div>
+					<label for="fname">First name</label>
+					<input id="fname" type="text">
+					<label for="lname">Last Name</label>
+					<input id="lname" type="text">
+				</div>
+				<div>
+					<label for="birthdate">Birthdate</label>
+					<input id="birthdate" type="date">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Address</legend>
+				<div>
+					<label for="street">Street</label>
+					<input id="street" type="text">
+					<label for="suburb">Suburb</label>
+					<input id="suburb" type="text">
+				</div>
+				<div>
+					<label for="state">State</label>
+					<select id="state">
+					    <option value="">--Please select a state--</option>
+					    <option value="nsw">New South Wales</option>
+					    <option value="qld">Queensland</option>
+					    <option value="sa">South Australia</option>
+					    <option value="tas">Tasmania</option>
+					    <option value="vic">Victoria</option>
+					    <option value="wa">Western Australia</option>
+					    <option value="act">Australian Capital Territory</option>
+					    <option value="nt">Northern Territory</option>
+					</select>
+					<label for="postcode">Post code</label>
+					<input id="postcode" type="text">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Contact Details</legend>
+				<div>
+					<label for="email">Email</label>
+					<input id="email" type="email">
+				</div>
+				<div>
+					<label for="telno">Telephone number</label>
+					<input id="telno" type="tel">
+				</div>
+			</fieldset>
+			<div>
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</body>
+</html>
