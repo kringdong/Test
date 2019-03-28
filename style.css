@@ -1,9 +1,20 @@
-/***** Google font import *****/
+/*----------------------------------------------------------------*\
+   Karren Rellora, s305685
+
+   Form layout inspired by
+   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+\*----------------------------------------------------------------*/
+
+/*-------------------------------------------*\
+    Google font import
+\*-------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-/***** General elements *****/
+/*-------------------------------------------*\
+    Generic elements
+\*-------------------------------------------*/
 
 * {
 	font-family: 'Montserrat', sans-serif;
@@ -22,7 +33,9 @@ h1 {
 }
 
 
-/***** Divs *****/
+/*-------------------------------------------*\
+    Div classes formatting
+\*-------------------------------------------*/
 
 .center {
 	display: table;
@@ -38,12 +51,15 @@ h1 {
 	background-color: #FFFFFF;
 	border-radius: 3px;
 	display: inline-block;
-	vertical-align: top;
+	margin: 30px;
 	padding: 30px;
+	vertical-align: top;
 }
 
 
-/***** Fieldsets & legends *****/
+/*-------------------------------------------*\
+    Fieldset and legend styles 
+\*-------------------------------------------*/
 
 fieldset {
 	background-color: #FFFFFF;
@@ -75,7 +91,9 @@ legend {
 }
 
 
-/***** Form labels & hover setting *****/
+/*-------------------------------------------*\
+    Form labels and hover setting
+\*-------------------------------------------*/
 
 label {
 	display: table-cell;
@@ -89,7 +107,10 @@ label:hover {
 }
 
 
-/***** Input & select elements, hover & focus settings *****/
+/*-------------------------------------------*\
+    Input & select elements,
+    hover & focus settings
+\*-------------------------------------------*/
 
 input, select {
 	border-width: 1px;
@@ -126,7 +147,9 @@ input:focus, select:focus {
 }
 
 
-/***** Submit button, hover & focus settings *****/
+/*-------------------------------------------*\
+    Submit button, hover & focus settings
+\*-------------------------------------------*/
 
 input[type=submit] {
 	background-color: #1976D2;
@@ -161,4 +184,12 @@ input[type=submit]:focus {
 	border-color: #1565C0;
 	color: #1565C0;
 	font-weight: bold;
+}
+
+/*-------------------------------------------*\
+    Footer
+\*-------------------------------------------*/
+
+footer {
+	font-size: 15px;
 }
