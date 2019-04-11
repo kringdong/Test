@@ -1,197 +1,127 @@
-/*----------------------------------------------------------------*\
-   Karren Rellora, s305685
-
-   Form layout inspired by
-   https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
-\*----------------------------------------------------------------*/
-
-/*-------------------------------------------*\
-    Google font import
-\*-------------------------------------------*/
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-@font-face {
-  font-display: auto;
-}
-/*-------------------------------------------*\
-    Generic elements
-\*-------------------------------------------*/
-
 * {
-	font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: #BBDEFB;
+  font-family: 'Open Sans', sans-serif;
+  padding: 1em;
 }
 
-div {
-	display: table-row;
+.card {
+  width: 30%;
+  height:30%;
+  border: 1px solid #EF9A9A;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  margin: 1%;
+  }
+
+.card:hover{
+  transform: scale(1.021);
+  transform: translateZ(0);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
-h1 {
-	margin-bottom: 30px;
+.card-header {
+  background-color: #FFEBEE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
 }
 
-
-/*-------------------------------------------*\
-    Div classes formatting
-\*-------------------------------------------*/
-
-.center {
-	display: table;
-	width: 100%;
+.material-icons {
+  font-size: 3em;
+  color: #D32F2F;
+  margin-top: .3125em;
 }
 
-.container {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-}
-.content {
-	background-color: #FFFFFF;
-	border-radius: 3px;
-	display: inline-block;
-	margin: 30px;
-	padding: 30px;
-	vertical-align: top;
+.title {
+  margin: .5em;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
-
-/*-------------------------------------------*\
-    Fieldset and legend styles 
-\*-------------------------------------------*/
-
-fieldset {
-	background-color: #FFFFFF;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #999999;
-	border-radius: 10px;
-	margin-bottom: 20px;
-	padding: 20px;
+.card-main {
+  color: #D32F2F;
+  text-align: left;
+  /*background-color: #FFEBEE;*/
+  padding: 0 1em;
 }
 
-fieldset:hover {
-	background-color: #F8F8F8;
+.main-description {
+  color: #D32F2F;
+  font-size: .85em;
+  text-align: left;
 }
 
-legend {
-	background-color: #FFFFFF;
-	border-width: 1px;
-	border-style: solid;
-	border-color: #999999;
-	border-radius: 5px;
-	font-size: 20px;
-	margin-bottom: 15px;
-	padding-top: 5px;
-	padding-right: 20px;
-	padding-bottom: 5px;
-	padding-left: 20px;
-	text-align: left;
+.card-footer {
+  border-top: 1px solid #FFEBEE;
+  padding: .4em;
+
 }
 
-
-/*-------------------------------------------*\
-    Form labels and hover setting
-\*-------------------------------------------*/
-
-label {
-	display: table-cell;
-	padding-right: 20px;
-	text-align: left;
-	width: 115px;
+.card-button {
+  display: inline-block;
+  padding: .4em .9em;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 600;
+  color: #D32F2F;
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
 }
 
-label:hover {
-	color: #1976D2;
+.card-button:hover {
+  background-color: #e5e5e5;
+  border-radius: 2px;
+  align-items: left;
+  text-decoration: none;
 }
 
-
-/*-------------------------------------------*\
-    Input & select elements,
-    hover & focus settings
-\*-------------------------------------------*/
-
-input, select {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #CCCCCC;
-	border-radius: 5px;
-	box-sizing: content-box;
-	height: 20px;
-	margin-bottom: 10px;
-	padding: 10px;
-	width: 300px;
-}
-
-input:hover, select:hover {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #1976D2;
-	margin-top: 0px;
-	margin-right: -3px;
-	margin-bottom: 10px;
-	margin-left: -3px;
-}
-
-input:focus, select:focus {
-	outline: none;
-	background-color: #F2F9FE;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #1976D2;
-	margin-top: -1px;
-	margin-right: -2px;
-	margin-bottom: 9px;
-	margin-left: -2px;
+a {
+    text-decoration: none;
 }
 
 
-/*-------------------------------------------*\
-    Submit button, hover & focus settings
-\*-------------------------------------------*/
 
-input[type=submit] {
-	background-color: #1976D2;
-	border-width: 3px;
-	border-style: solid;
-	border-color: transparent;
-	border-radius: 5px;
-	box-sizing: border-box;
-	color: white;
-	cursor: pointer;
-	font-size: large;
-	height: 50px;
-	margin-top: 8px;
-	margin-right: 0px;
-	margin-bottom: 8px;
-	margin-left: 0px;
-	padding-top: 12px;
-	padding-right: 18px;
-	padding-bottom: 12px;
-	padding-left: 18px;
-	width: 100%;
-}
 
-input[type=submit]:hover {
-	background-color: #1565C0;
-}
 
-input[type=submit]:focus {
-	background-color: white;
-	border-width: 3px;
-	border-style: solid;
-	border-color: #1565C0;
-	color: #1565C0;
-	font-weight: bold;
-}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    }
 
-/*-------------------------------------------*\
-    Footer
-\*-------------------------------------------*/
+.flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    }
 
-footer {
-	font-size: 15px;
+
+@media only screen and (max-width: 640px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+.flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    width:100%;
+  }   
 }
