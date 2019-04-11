@@ -1,50 +1,188 @@
+/* -------------------- TEAM CSS -------------------- */
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-size: 100%;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1.5em;
+}
+h1 {
+  font-size: 2.25em;
+  margin-bottom: .67em;
+}
+
+h2 {
+  font-size: 1.75em;
+  margin-bottom: .64em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: .5em;
+}
+
+h4 {
+  font-size: 1.25em;
+  margin-bottom: .6em;
+}
+
+h5 {
+  font-size: 1.125em;
+  margin-bottom: .67em;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: .75em;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: .75em;
+}
+
+a:link {
+  color: red;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color:  #cc3300;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+  width: 50%;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+div {
+
+}
+
+img {
+
+}
+
+button {
+  background-color: #008080;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+ul {
+
+}
+
+ol {
+
+}
+
+li {
+
+}
+
+
+p.example {
+border-style: outset;
+}
+
+/* -------------------- INDIVIDUAL CSS -------------------- */
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  padding: 1em;
+  padding: 2%;
+}
+
+.wrapper {
+  padding: 1em 0;
+  margin: 0;
+  display: inline-block; 
+}
+
+.card-wrap {
+    padding: 1em;
+    width: 33.33%;
 }
 
 .card {
-  width: 30%;
-  height:30%;
-  border: 1px solid #EF9A9A;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  margin: 1%;
+  box-shadow: 0 4px 4px rgba(0,0,0,.08), 0 0 2px rgba(0,0,0,.08);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
   }
 
 .card:hover{
-  transform: scale(1.021);
-  transform: translateZ(0);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  transform: scale(1.021), translateZ(0);
+  box-shadow: 0 10px 10px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.1);
 }
 
 .card-header {
   background-color: #FFEBEE;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 3em auto;
   align-items: center;
-  padding: 0 1em;
+  padding: 1em;
+  gap: 1em;
+  border: 1px solid #FFF;
+  border-radius: 6px 6px 0 0;
 }
 
 .material-icons {
   font-size: 3em;
   color: #D32F2F;
-  margin-top: .3125em;
+  align-items: center;
 }
 
-.title {
-  margin: .5em;
-  font-size: 1.1em;
+h3.title {
+  margin: 0;
+  font-size: 1.2em;
   font-weight: 600;
+  text-align: center;
 }
 
 .card-main {
@@ -56,12 +194,11 @@ body {
 
 .main-description {
   color: #D32F2F;
-  font-size: .85em;
   text-align: left;
 }
 
 .card-footer {
-  border-top: 1px solid #FFEBEE;
+  border-top: 1px solid #eee;
   padding: .4em;
 
 }
@@ -84,14 +221,6 @@ body {
   text-decoration: none;
 }
 
-a {
-    text-decoration: none;
-}
-
-
-
-
-
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -107,21 +236,24 @@ a {
     align-self: auto;
     }
 
-
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 360px) {
   .flex-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-content: flex-start;
+    align-content: stretch;
     align-items: stretch;
   }
 
-.flex-item {
+  .flex-item {
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
     width:100%;
-  }   
+  }
+
+  .card-wrap {
+    width:100%;
+  }
 }
