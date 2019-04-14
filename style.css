@@ -187,7 +187,7 @@ border-style: outset;
 }
 
 .card-button {
-  font-weight: 600;
+  font-weight: 700;
   color: #D32F2F;
   transition: all .2s ease;
 }
@@ -261,7 +261,7 @@ border-style: outset;
     display: inline-block;
     padding: .4em .6em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     color: #D32F2F;
     transition: all .2s ease;
   }
