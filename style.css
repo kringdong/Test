@@ -1,139 +1,9 @@
-/* -------------------- TEAM CSS -------------------- */
-
-* {
-  font-family: 'Open Sans', sans-serif;
-}
-
-body {
-  font-size: 100%;
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  line-height: 1.5em;
-}
-h1 {
-  font-size: 2.25em;
-  margin-bottom: .67em;
-}
-
-h2 {
-  font-size: 1.75em;
-  margin-bottom: .64em;
-}
-
-h3 {
-  font-size: 1.5em;
-  margin-bottom: .5em;
-}
-
-h4 {
-  font-size: 1.25em;
-  margin-bottom: .6em;
-}
-
-h5 {
-  font-size: 1.125em;
-  margin-bottom: .67em;
-}
-
-h6 {
-  font-size: 1em;
-  line-height: 1.5em;
-  margin-bottom: .75em;
-}
-
-p {
-  font-size: 1em;
-  margin-bottom: .75em;
-}
-
-a:link {
-  color: red;
-  text-decoration: none;
-}
-
-/* visited link */
-a:visited {
-  color:  #cc3300;
-  text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-  text-decoration: underline;
-}
-
-/* selected link */
-a:active {
-  color: blue;
-  text-decoration: none;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 1em;
-  width: 50%;
-}
-
-tr:nth-child(even){
-  background-color: #f2f2f2;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-div {
-
-}
-
-img {
-
-}
-
-button {
-  background-color: #008080;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-ul {
-
-}
-
-ol {
-
-}
-
-li {
-
-}
-
-
-p.example {
-border-style: outset;
-}
-
-/* -------------------- INDIVIDUAL CSS -------------------- */
-
-
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  padding: .5em;
 }
 
 .wrapper {
@@ -144,14 +14,8 @@ body {
 }
 
 .card-wrap {
-  padding: 1em;
-/*  width: 33.33%;*/
+  padding: .5em;
 }
-
-.card-footer {
-  display:none;
-}
-
 
 .card {
   border-radius: 6px;
@@ -160,63 +24,41 @@ body {
   flex-direction: column;
   box-shadow: 0 4px 4px rgba(0,0,0,.08), 0 0 2px rgba(0,0,0,.08);
   transition: .3s transform cubic-bezier(.155,1.105,.295,1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  }
-
-.card:hover{
-  transform: scale(1.021), translateZ(0);
-  box-shadow: 0 10px 10px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.1);
 }
 
 .card-header {
   background-color: #FFEBEE;
-  display: grid;
-/*  grid-template-columns: 3em auto;*/
-  grid-template-columns: auto;
   align-items: center;
   padding: 1em;
-  gap: 1em;
   border: 1px solid #FFF;
   border-radius: 6px 6px 0 0;
 }
 
 .material-icons {
   display: none;
-/*  font-size: 3em;
-  color: #D32F2F;
-  align-items: center;*/
 }
 
-h3.title {
+.title {
   margin: 0;
   font-size: 1.2em;
-  font-weight: 600;
   text-align: center;
 }
 
 .card-main {
   color: #D32F2F;
-  text-align: left;
-  /*background-color: #FFEBEE;*/
-  padding: 0 1em;
+  padding: 1em;
+  text-align: justify;
 }
 
-.main-description {
-  color: #D32F2F;
-  text-align: left;
+.main-description p {
+  margin: 0;
 }
 
 .card-footer {
-  border-top: 1px solid #eee;
-  padding: .4em;
-
+  display: none;
 }
 
 .card-button {
-  display: inline-block;
-/*  padding: .4em .9em;*/
-  padding: .3em;
-/*  text-transform: uppercase;*/
-  font-size: 1em;
   font-weight: 600;
   color: #D32F2F;
   transition: all .2s ease;
@@ -224,88 +66,29 @@ h3.title {
 }
 
 .card-button:hover {
-  background-color: #eee;
-  border-radius: 2px;
-  align-items: left;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: stretch;
-    align-content: stretch;
-    align-items: stretch;
-    }
-
-.flex-item {
-    flex: 0 1 auto;
-    align-self: auto;
-    }
-
-
-
-/* -------------------- MEDIA QUIERIES --------------------*/
-
-/*@media only screen and (max-width: 360px) {
-  .flex-container {
-    flex-direction: column;
-    align-content: stretch;
-    align-items: stretch;
-  }
-
-  .flex-item {
-    width:100%;
-  }
-
-  .card-wrap {
-    width:100%;
-  }
-}
-
-
-
-
-
+/* MEDIA QUERIES*/
 
 @media all and (min-width: 1001px) {
-  #sidebar ul li a:after {
-    content: " (" attr(data-email) ")";
-    font-size: 11px;
-    font-style: italic;
-    color: #666;
-  }
+
 }
 
 @media all and (max-width: 1000px) and (min-width: 700px) {
-  #sidebar ul li a:before {
-    content: "Email: ";
-    font-style: italic;
-    color: #666;
+
+}
+
+@media all and (max-width: 699px) and (min-width: 520px) {
+
+}
+
+@media all and (max-width: 519px) and (min-width: 320px) {
+
+}
+
+@media all and (max-width: 319px) and (min-width: 0px) {
+  body, .wrapper, .flex-container {
+    width: 320px;
   }
 }
-
-@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
-  #sidebar ul li a {
-    padding-left: 21px;
-    background: url(../images/email.png) left center no-repeat;
-  }
-}
-
-
-@media all and (max-width: 519px) and (min-width: 321px), (min-width: 1151px) {
-  #sidebar ul li a {
-    padding-left: 21px;
-    background: url(../images/email.png) left center no-repeat;
-  }
-}
-
-
-@media screen and (max-width: 320px) {
-  
-}
-
-
-
-*/
