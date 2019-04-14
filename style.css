@@ -76,6 +76,14 @@ body {
 }
 
 @media all and (max-width: 1000px) and (min-width: 520px) {
+  .card-header {
+    height: 4.5em;
+  }
+
+  .card-main {
+    height: 6.5em;
+  }
+
   .valign {
     vertical-align: middle;
     line-height: 2.25em;
