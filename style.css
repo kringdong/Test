@@ -139,13 +139,19 @@ body {
 .wrapper {
   padding: 1em 0;
   margin: 0;
-  display: inline-block; 
+  display: inline-block;
+  width: 100%;
 }
 
 .card-wrap {
-    padding: 1em;
-    width: 33.33%;
+  padding: 1em;
+/*  width: 33.33%;*/
 }
+
+.card-footer {
+  display:none;
+}
+
 
 .card {
   border-radius: 6px;
@@ -164,7 +170,8 @@ body {
 .card-header {
   background-color: #FFEBEE;
   display: grid;
-  grid-template-columns: 3em auto;
+/*  grid-template-columns: 3em auto;*/
+  grid-template-columns: auto;
   align-items: center;
   padding: 1em;
   gap: 1em;
@@ -173,9 +180,10 @@ body {
 }
 
 .material-icons {
-  font-size: 3em;
+  display: none;
+/*  font-size: 3em;
   color: #D32F2F;
-  align-items: center;
+  align-items: center;*/
 }
 
 h3.title {
@@ -205,8 +213,9 @@ h3.title {
 
 .card-button {
   display: inline-block;
-  padding: .4em .9em;
-  text-transform: uppercase;
+/*  padding: .4em .9em;*/
+  padding: .3em;
+/*  text-transform: uppercase;*/
   font-size: 1em;
   font-weight: 600;
   color: #D32F2F;
@@ -215,7 +224,7 @@ h3.title {
 }
 
 .card-button:hover {
-  background-color: #e5e5e5;
+  background-color: #eee;
   border-radius: 2px;
   align-items: left;
   text-decoration: none;
@@ -223,11 +232,11 @@ h3.title {
 
 .flex-container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-content: stretch;
+    align-items: stretch;
     }
 
 .flex-item {
@@ -235,7 +244,11 @@ h3.title {
     align-self: auto;
     }
 
-@media only screen and (max-width: 360px) {
+
+
+/* -------------------- MEDIA QUIERIES --------------------*/
+
+/*@media only screen and (max-width: 360px) {
   .flex-container {
     flex-direction: column;
     align-content: stretch;
@@ -251,6 +264,48 @@ h3.title {
   }
 }
 
+
+
+
+
+
+@media all and (min-width: 1001px) {
+  #sidebar ul li a:after {
+    content: " (" attr(data-email) ")";
+    font-size: 11px;
+    font-style: italic;
+    color: #666;
+  }
+}
+
+@media all and (max-width: 1000px) and (min-width: 700px) {
+  #sidebar ul li a:before {
+    content: "Email: ";
+    font-style: italic;
+    color: #666;
+  }
+}
+
+@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
+  #sidebar ul li a {
+    padding-left: 21px;
+    background: url(../images/email.png) left center no-repeat;
+  }
+}
+
+
+@media all and (max-width: 519px) and (min-width: 321px), (min-width: 1151px) {
+  #sidebar ul li a {
+    padding-left: 21px;
+    background: url(../images/email.png) left center no-repeat;
+  }
+}
+
+
 @media screen and (max-width: 320px) {
   
 }
+
+
+
+*/
