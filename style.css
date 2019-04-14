@@ -26,9 +26,13 @@ body {
   transition: .3s transform cubic-bezier(.155,1.105,.295,1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
 }
 
+.card:hover{
+  transform: scale(1.021), translateZ(0);
+  box-shadow: 0 10px 10px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.1);
+}
+
 .card-header {
   background-color: #FFEBEE;
-  align-items: center;
   padding: 1em;
   border: 1px solid #FFF;
   border-radius: 6px 6px 0 0;
@@ -41,7 +45,6 @@ body {
 .title {
   margin: 0;
   font-size: 1.2em;
-  text-align: center;
 }
 
 .card-main {
@@ -69,28 +72,35 @@ body {
   text-decoration: underline;
 }
 
-/* MEDIA QUERIES*/
+/* MEDIA QUERIES ------------------------------------------------ */
 
 @media all and (min-width: 1001px) {
-
-}
-
-@media all and (max-width: 1000px) and (min-width: 520px) {
   .card-header {
-    height: 4.5em;
+    display: grid;
+    grid-template-columns: 3em auto;
+    align-items: center;
+    padding: 1em;
+    gap: 1em;
   }
 
-  .card-main {
-    height: 6.5em;
+  .title {
+    font-size: 1.5em;
+    line-height: 1.5em;
   }
 
-  .valign {
-    vertical-align: middle;
-    line-height: 2.25em;
+  .material-icons {
+    display: initial;
+    font-size: 3em;
+    color: #D32F2F;
+    align-items: center;
   }
 
   .card-wrap {
-    width:50%;
+    width: 33%;
+  }
+
+  .main-description {
+    text-align: left;
   }
 
   .flex-container {
@@ -102,22 +112,93 @@ body {
     align-items: stretch;
   }
 
-  .flex-item:nth-child(1) {
-      order: 0;
-      flex: 0 1 auto;
-      align-self: auto;
-      }
+  .flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
 
-  .flex-item:nth-child(2) {
-      order: 1;
-      flex: 0 1 auto;
-      align-self: auto;
-      }
+  .card-footer {
+    display: initial;
+    border-top: 1px solid #eee;
+    padding: .4em;
+  }
+
+  .card-button {
+    display: inline-block;
+    padding: .4em .9em;
+    padding: .3em;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 600;
+    color: #D32F2F;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+  }
+
+  .card-button:hover {
+    background-color: #eee;
+    border-radius: 2px;
+    align-items: left;
+    text-decoration: none;
+  }
+
+  span.card-button {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1000px) and (min-width: 520px) {
+  .card-wrap {
+    width: 50%;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+  }
+
+  .flex-item {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+
+  /* Found a cool trick for centering elements from 
+     https://css-tricks.com/centering-in-the-unknown/
+     used in .card-header, .card-header:before & .title;
+  */
+
+  .card-header {
+    text-align: center;
+    height: 5em;
+  }
+
+  .card-header:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.5em;
+  }
+
+  .title {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    font-size: 1.25em;
+    line-height: 1.25em;
+  }
 }
 
 @media all and (max-width: 519px) and (min-width: 320px) {
   body {
-    width: 100%;
+    width: auto;
   }
 }
 
