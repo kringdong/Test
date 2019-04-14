@@ -45,6 +45,7 @@ body {
 .title {
   margin: 0;
   font-size: 1.2em;
+  text-align: center;
 }
 
 .card-main {
@@ -74,7 +75,83 @@ body {
 
 /* MEDIA QUERIES ------------------------------------------------ */
 
-@media all and (min-width: 1001px) {
+@media all and (max-width: 1920px) and (min-width: 1281px) {
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: .5em;
+  }
+
+  .title {
+    font-size: 1.4em;
+    line-height: 1.4em;
+  }
+
+  .material-icons {
+    display: initial;
+    font-size: 7em;
+    color: #D32F2F;
+  }
+
+  .card-wrap {
+    width: 25%;
+  }
+
+  .main-description {
+    text-align: left;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: stretch;
+  }
+
+  .card-footer {
+    display: initial;
+    border-top: 1px solid #eee;
+    padding: .4em;
+  }
+
+  .card-button {
+    display: inline-block;
+    padding: .4em .6em;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 600;
+    color: #D32F2F;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+  }
+
+  .card-button:hover {
+    background-color: #eee;
+    border-radius: 2px;
+    align-items: left;
+    text-decoration: none;
+  }
+
+  span.card-button {
+    display: none;
+  }
+  
+  .card-header {
+    height: 13em;
+  }
+
+  .card-main {
+    height: 6.3em;
+  }
+}
+
+@media all and (max-width: 1280px) and (min-width: 1001px) {
   .card-header {
     display: grid;
     grid-template-columns: 3em auto;
@@ -84,8 +161,9 @@ body {
   }
 
   .title {
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 1.3em;
+    line-height: 1.3em;
+    text-align: left;
   }
 
   .material-icons {
@@ -126,8 +204,7 @@ body {
 
   .card-button {
     display: inline-block;
-    padding: .4em .9em;
-    padding: .3em;
+    padding: .4em .6em;
     text-transform: uppercase;
     font-size: 1em;
     font-weight: 600;
@@ -146,9 +223,17 @@ body {
   span.card-button {
     display: none;
   }
+  
+  .card-header {
+    height: 7em;
+  }
+
+  .card-main {
+    height: 6em;
+  }
 }
 
-@media all and (max-width: 1000px) and (min-width: 520px) {
+@media all and (max-width: 1000px) and (min-width: 535px) {
   .card-wrap {
     width: 50%;
   }
@@ -187,16 +272,15 @@ body {
   }
 
   .title {
-    text-align: center;
     display: inline-block;
     vertical-align: middle;
     width: auto;
-    font-size: 1.25em;
-    line-height: 1.25em;
+    font-size: 1.15em;
+    line-height: 1.15em;
   }
 }
 
-@media all and (max-width: 519px) and (min-width: 320px) {
+@media all and (max-width: 534px) and (min-width: 320px) {
   body {
     width: auto;
   }
