@@ -197,7 +197,7 @@ body {
   .card-button:hover {
     background-color: #068c9e;
     border-radius: 2px;
-    color: #f2f7f8;
+    color: white;
     text-decoration: none;
   }
 }
