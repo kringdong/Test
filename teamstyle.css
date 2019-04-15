@@ -135,56 +135,6 @@ button {
   cursor: pointer;
 }
 
-.button1{
-  background-color: #008080;
-  color: #ffffff ;
-}
-
-.button1:hover{
-  background-color: #003333;
-  color: #ffffff;
-}
-
-.button2{
-  background-color: #00004d;
-  color: #ffffff ;
-}
-
-.button2:hover{
-  background-color: #00001a;
-    color: #ffffff;
-}
-
-.button3{
-  background-color: #b3b3b3;
-  color: #000000;
-}
-
-.button3:hover{
-  background-color: #8c8c8c;
-    color: #000000;
-}
-
-.button4{
-  background-color: #e60000;
-  color: #ffffff ;
-}
-
-.button4:hover{
-  background-color: #b3b3b3;
-    color: #ffffff;
-}
-
-.button5{
-  background-color: #b3b3b3;
-  color: #ffffff;
-}
-
-.button5:hover{
-  background-color: #8c8c8c;
-    color: #000000;
-}
-
 p.example {
   border-style: outset;
   background-color: #d9d9d9;
