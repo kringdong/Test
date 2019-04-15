@@ -126,14 +126,16 @@ border-style: outset;
 
 /* CARD COMPONENT CSS ----------------------------------------------------*/
 
+/* mobile first, applies starting from 320px wide screens */
 body {
   padding: .5em;
+  width: 320px;
 }
 
 .wrapper {
-  padding: 1em 0;
-  margin: 0;
   display: inline-block;
+  margin: 0;
+  padding: 1em 0;
   width: 100%;
 }
 
@@ -143,56 +145,58 @@ body {
 
 .card {
   border-radius: 6px;
-  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0,0,0,.1), 0 0 2px rgba(0,0,0,.1);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 4px rgba(0,0,0,.1), 0 0 2px rgba(0,0,0,.1);
-  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12);
+  overflow: hidden;
+  transition: all .2s ease;
 }
 
 .card:hover {
+  box-shadow: 0 10px 10px rgba(0,0,0,.15), 0 4px 8px rgba(0,0,0,.15);
   transform: scale(1.05);
   transform: translateZ(0);
-  box-shadow: 0 10px 10px rgba(0,0,0,.15), 0 4px 8px rgba(0,0,0,.15);
 }
 
 .card-header {
-  background-color: #FFEBEE;
-  padding: 1em;
+  background: linear-gradient(#e8f5f8, #feffff);
   border: 1px solid #FFF;
   border-radius: 6px 6px 0 0;
+  padding: 1em;
 }
 
 .material-icons {
+  color: #83d2d4;
   display: none;
-  color: #D32F2F;
 } 
 
 .title {
-  margin: 0;
+  color: #17252a;
   font-size: 1.15em;
+  line-height: 1.5em;
+  margin: 0;
   text-align: center;
 }
 
 .card-main {
-  color: #D32F2F;
   padding: 1em;
   text-align: center;
 }
 
 .main-description p {
+  color: #404040;
   margin: 0;
 }
 
 .card-footer {
-  display: none;
   border-top: 1px solid #eee;
+  display: none;
   padding: .4em;
 }
 
 .card-button {
+  color: #068c9e;
   font-weight: 700;
-  color: #D32F2F;
   transition: all .2s ease;
 }
 
@@ -200,57 +204,103 @@ body {
   text-decoration: underline;
 }
 
+.card-button:visited {
+  color: #068c9e;
+}
+
 /* MEDIA QUERIES ------------------------------------------------ */
 
-@media all and (min-width: 1280px) {
-  /* 4-column layout */
-  .card-wrap {
-    width: 25%;
-  }
-
-  /* uses flexbox layout to center header items*/
-  .card-header {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    padding: .5em;
-    height: 13em;
-  }
-
-  .material-icons {
-    font-size: 7em;
-  }
-
-  .title {
-    font-size: 1.4em;
-    line-height: 1.4em;
-    margin-top: .5em;
-  }
-
-  .card-main {
-    height: 6.3em;
+@media all and (min-width: 321px) {
+  body {
+    width: auto;
   }
 }
 
-@media all and (min-width: 1000px), (min-width: 1280px) {
+@media all and (min-width: 600px) {
   .flex-container {
+    align-content: stretch;
+    align-items: stretch;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-content: stretch;
-    align-items: stretch;
+  }
+
+  .card-wrap {
+    width: 50%;
+  }
+
+  .card-button {
+    display: block;
+  }
+}
+
+/* for aligning the title */
+@media all and (max-width: 999px) and (min-width: 600) {
+  /* Found a cool trick for centering elements from 
+     https://css-tricks.com/centering-in-the-unknown/
+     used in .card-header, .card-header:before & .title;
+  */
+  .card-header {
+    height: 5em;
+    text-align: center;
+  }
+
+  .card-header:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    margin-right: -0.5em;
+    vertical-align: middle;
+  }
+
+  .title {
+    display: inline-block;
+    font-size: 1.15em;
+    line-height: 1.5em;
+    vertical-align: middle;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .card-header {
+    align-items: center;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 3em auto;
+    height: 7.5em;
+    padding: 1em;
   }
 
   .material-icons {
     display: initial;
+    font-size: 3em;
+  }
+
+  .title {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+  }
+
+  .card-main {
+    height: 6em;
+    padding-top: 0;
   }
 
   .main-description {
     text-align: left;
+  }
+
+  span.card-button {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  /* 3-column layout */
+  .card-wrap {
+    width: 33%;
   }
 
   span.card-button {
@@ -262,98 +312,48 @@ body {
   }
 
   .card-button {
+    color: #068c9e;
     display: inline-block;
+    font-weight: 700;
     padding: .4em .6em;
     text-transform: uppercase;
-    font-weight: 700;
-    color: #D32F2F;
     transition: all .2s ease;
   }
 
   .card-button:hover {
-    background-color: #eee;
+    background-color: #068c9e;
     border-radius: 2px;
+    color: #f2f7f8;
     text-decoration: none;
   }
 }
 
-@media all and (max-width: 1279px) and (min-width: 1000px) {
-  /* 3-column layout */
+@media all and (min-width: 1280px) {
+  /* 4-column layout */
   .card-wrap {
-    width: 33%;
+    width: 25%;
   }
 
+  /* uses flexbox layout to center header items*/
   .card-header {
-    display: grid;
-    grid-template-columns: 3em auto;
+    align-content: center;
     align-items: center;
-    padding: 1em;
-    gap: 1em;
-    height: 7em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 13em;
+    justify-content: center;
+    padding: .5em;
   }
 
   .material-icons {
-    font-size: 3em;
+    font-size: 7em;
   }
 
   .title {
-    font-size: 1.3em;
-    line-height: 1.3em;
-    text-align: left;
-  }
-
-  .card-main {
-    height: 6em;
-  }
-}
-
-@media all and (max-width: 999px) and (min-width: 550px) {
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: stretch;
-  }
-
-  .card-wrap {
-    width: 50%;
-  }
-
-  /* Found a cool trick for centering elements from 
-     https://css-tricks.com/centering-in-the-unknown/
-     used in .card-header, .card-header:before & .title;
-  */
-  .card-header {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    margin-top: .5em;
     text-align: center;
-    height: 5em;
-  }
-
-  .card-header:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -0.5em;
-  }
-
-  .title {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 1.2em;
-    line-height: 1.2em;
-  }
-}
-
-@media all and (max-width: 549px) and (min-width: 320px) {
-  body {
-    width: auto;
-  }
-}
-
-@media all and (max-width: 319px) and (min-width: 0px) {
-  body {
-    width: 320px;
   }
 }
