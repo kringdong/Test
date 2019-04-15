@@ -195,9 +195,9 @@ body {
   }
 
   .card-button:hover {
-    background-color: #068c9e;
+    color: #068c9e;
     border-radius: 2px;
-    color: white;
+    background-color: #f2f7f8;
     text-decoration: none;
   }
 }
